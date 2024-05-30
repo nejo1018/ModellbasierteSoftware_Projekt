@@ -5,6 +5,6 @@ Wir haben beide Funktionen in einer "for-loop" aufgerufen und diese 1 Miliarde m
 
 Ausgabe:
 
-Dauer der Funktion Lookup:  518.9µs
+Dauer der Funktion Lookup:  249.599ms
 
-Dauer der Funktion Dict:  4.9904ms
+Dauer der Funktion Dict:  4.8561749s
