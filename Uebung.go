@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 type rectangle struct {
 	length int
@@ -73,13 +76,13 @@ func sumArea_Dict(x, y shape_Value) int {
 
 func main() {
 
+	startTime := time.Now()
+
 	rect_Lookup := rectangle{length: 4, width: 5}
 	sq_Lookup := square{length: 3}
 
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10000; i++ {
 		sumArea_Lookup(rect_Lookup, sq_Lookup)
-		fmt.Print(i)
-		fmt.Print("\n")
 	}
 
 	rect_Dict := shape_Value{
@@ -92,7 +95,12 @@ func main() {
 		area: func(x interface{}) int { return area_Sq(x.(square)) },
 	}
 
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 1000000; i++ {
 		sumArea_Dict(rect_Dict, sq_Dict)
 	}
+
+	elapsedTime := time.Since(startTime)
+
+	fmt.Println("Dauer der Funktion: ", elapsedTime)
+
 }
