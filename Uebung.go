@@ -1,5 +1,6 @@
 package main
 
+/*
 import (
 	"fmt"
 	"time"
@@ -102,4 +103,6 @@ func main() {
 	elapsedTime2 := time.Since(startTime2)
 	fmt.Println("Dauer der Funktion Dict: ", elapsedTime2)
 
+
 }
+*/
