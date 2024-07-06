@@ -4,32 +4,32 @@ import (
 	"fmt"
 )
 
-// Show interface with a show method
+
 type Show interface {
 	show() string
 }
 
-// Implement Show for int
+
 type ShowInt int
 
 func (i ShowInt) show() string {
 	return fmt.Sprintf("%d", i)
 }
 
-// Implement Show for string
+
 type ShowString string
 
 func (s ShowString) show() string {
 	return string(s)
 }
 
-// Define the node struct
+
 type node[T any] struct {
 	val  T
 	next *node[T]
 }
 
-// Implement the showNode function
+
 func showNode[T Show](n *node[T]) string {
 	var s string
 	for n != nil {
@@ -40,17 +40,17 @@ func showNode[T Show](n *node[T]) string {
 	return s
 }
 
-// Define the ShowFunc type for dictionary typing
+
 type ShowFunc func(interface{}) string
 
-// Define the node_Value struct for dictionary typing
+
 type node_Value struct {
 	val  interface{}
 	next *node_Value
 	show ShowFunc
 }
 
-// Implement the showNode_Dict function
+n
 func showNode_Dict(n *node_Value) string {
 	var s string
 	for n != nil {

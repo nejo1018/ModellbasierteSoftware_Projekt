@@ -59,10 +59,9 @@ func random1to3() int {
 }
 
 func Berechnung() {
-	// Zufallsgenerator initialisieren
+
 	rand.Seed(time.Now().UnixNano())
 
-	// Mitarbeiter-Map vorbereiten
 	employeeMap := map[string]EmployeeFunction{
 		"CEO":       {calculate: calculateCEOPay},
 		"Developer": {calculate: calculateDeveloperPay},

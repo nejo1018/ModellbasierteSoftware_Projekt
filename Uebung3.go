@@ -4,44 +4,36 @@ import (
 	"fmt"
 )
 
-// Define the rectangle struct
 type rectangle struct {
 	length int
 	width  int
 }
 
-// Define the square struct
 type square struct {
 	length int
 }
 
-// Implement the area method for rectangle
 func (r rectangle) area() int {
 	return r.length * r.width
 }
 
-// Implement the area method for square
 func (s square) area() int {
 	return s.length * s.length
 }
 
-// Define the shape interface
 type shape interface {
 	area() int
 }
 
-// Define the shape_Value struct for dictionary passing
 type shape_Value struct {
 	val  interface{}
 	area func(interface{}) int
 }
 
-// Implement the area function for square in dictionary passing
 func squareArea(val interface{}) int {
 	return val.(square).area()
 }
 
-// Implement the area function for rectangle in dictionary passing
 func rectangleArea(val interface{}) int {
 	return val.(rectangle).area()
 }
@@ -59,7 +51,6 @@ func sumArea_Dict(x, y shape_Value) int {
 	}
 }
 
-// Test function for dictionary variant
 func testSumArea_Dict() {
 	x := shape_Value{val: square{1}, area: squareArea}
 	y := shape_Value{val: square{2}, area: squareArea}
